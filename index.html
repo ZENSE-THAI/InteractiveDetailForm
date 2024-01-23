@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center;background-color: transparent; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+<!--
+    #MAIN 
+-->
+    <main>
+
+<!--
+    #LEFT SECTION
+-->
+
+    <section class="left__section">
+      <div class="cards">
+<!-- ---------------------------------FRONT-CARD-------------------------------------- -->
+        <div class="front__card">
+          <img src="./images/bg-card-front.png" alt="" class="bg-card-front">
+          <div class="card__container">
+            <img src="./images/card-logo.svg" alt=""  class="card-logo">
+            <h1 id="number">0000 0000 0000 0000</h1>
+            <div class="card_info">
+              <span id="name">Jane Appleseed</span>
+              <span class="date">
+                <span id="mount">00</span>  
+                /
+                <span id="year">00</span>
+              </span>
+            </div>
+          </div>
+        </div>
+<!-- ----------------------------------BACK-CARD-------------------------------------- -->
+        <div class="back__card">
+          <img src="./images/bg-card-back.png" alt="" class="bg-card-back">
+          <span id="cvc">000</span>
+        </div>
+
+      </div>
+    </section>
+    
+<!--
+    #RIGHT SECTION
+-->
+
+  <section class="right__section">
+    <form action="" class="">
+            <div class="grid grid-1">
+              <label for="card__name"> Cardholder Name</label>
+              <input 
+              type="text"
+              class=""
+              placeholder="e.g. Jane Appleseed"
+              id="card__name"
+              autocomplete="off"
+              >
+              <span></span>
+            </div>
+            <div class="grid grid-2">
+              <label for="card__number">Card Number</label>
+              <input 
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              id="card__number"
+              autocomplete="off"
+              pattern="\d{16}"
+              oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"        
+              minlength="16"
+              maxlength="16">
+              <span></span>
+            </div>
+            <div class="card__info">
+            <div class="card__date">
+            <label for="card__date"> Exp. Date (MM/YY)</label>
+            <div class="date-group">
+              <div class="mm-yy">
+                <input 
+                type="text"
+                placeholder="MM"
+                id="card__mount"
+                oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"   
+                maxlength="2"
+                minlength="2" 
+                autocomplete="off"
+                >
+                <span class=""></span>
+              </div>
+
+              <div class="mm-yy">
+                <input 
+                type="text"
+                placeholder="YY"
+                id="card__year"
+                oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"   
+                maxlength="2"
+                minlength="2" 
+                autocomplete="off"
+                class=""
+                >
+                <span class=""></span>
+              </div>
+
+            </div>
+            </div>
+            <div class="grid grid-3">
+              <label for="card__cvc">CVC</label>
+              <input 
+                type="text"
+                placeholder="e.g. 123"
+                id="card__cvc"
+                oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"   
+                maxlength="3"
+                minlength="3" 
+                autocomplete="off"
+                >
+            <span></span>
+
+            </div>
+          </div>
+          <button id="submit__btn"> Confirm</button>
+        </form>
+        
+        <div class="thank__section hidden">
+          <img src="./images/icon-complete.svg" alt="">
+          <h1 class="thank__title">Thank you!</h1>
+          <p class="thank__subtitle">We've added your card details</p>
+          <button id="thx-btn">Continue</button>
+        </div>
+
+  </section>
+    </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
